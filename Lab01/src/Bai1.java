@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class Bai1 {
-    public static void main(String[] args) throws Exception {
-        MyLog log = new MyLog("21522757.txt");
+    public Bai1(){
+        MyLog log = new MyLog("Lab01\\21522757.txt");
         List<Integer> list = new ArrayList<Integer>();
         for(int i = 10; i <= 200; i++){
             if(i%7==0 && i%5!=0){   

@@ -3,9 +3,9 @@ import java.util.Scanner;
 import com.example.MyLog;
 
 public class Bai2 {
-    public static void main(String[] args) {
+    public Bai2(){
         Scanner scanner = new Scanner(System.in);
-        MyLog log = new MyLog("21522757.txt");
+        MyLog log = new MyLog("Lab01\\21522757.txt");
         System.out.print("Nhap n: ");
         int n = scanner.nextInt();
         int result = 1;

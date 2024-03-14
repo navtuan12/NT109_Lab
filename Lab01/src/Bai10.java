@@ -6,7 +6,7 @@ public class Bai10 {
     public static final char TAB = '\t';
     public static final char BREAK_LINE = '\n';
     public static void main(String[] args) {
-        MyLog log = new MyLog("21522757.txt");
+        MyLog log = new MyLog("Lab01\\21522757.txt");
         String input = " hoc java co ban den nang cao ";
         int count = 0;
         int size = input.length();

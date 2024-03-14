@@ -1,11 +1,9 @@
 import com.example.MyLog;
 import java.util.Scanner;
 public class Bai7 {
-    /*Bài 07:
-Viết chương trình liệt kê tất cả các số nguyên tố nhỏ hơn n. Số nguyên dương n được nhập từ bàn phím.
- */
+    
     public static void main(String[] args) {
-        MyLog log = new MyLog("21522757.txt");
+        MyLog log = new MyLog("Lab01\\21522757.txt");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhap n: ");
         int n = scanner.nextInt();
