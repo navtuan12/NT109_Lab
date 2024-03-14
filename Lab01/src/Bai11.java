@@ -9,7 +9,7 @@ public class Bai11 {
     public static final char COMMA = ',';
      
     public static void main(String[] args) {
-        MyLog log = new MyLog("21522757.txt");
+        MyLog log = new MyLog("Lab01\\21522757.txt");
         String input = "Hello World, Hello Java, Hello World";
         String result = countWords(input).toString().replace("=", ": ");
         log.WriteLog("Bai11: Input: "+ input +", result: " + result);

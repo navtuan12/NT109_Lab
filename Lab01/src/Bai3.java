@@ -5,9 +5,9 @@ import java.util.Map;
 
 
 public class Bai3 {
-    public static void main(String[] args) {
+    public Bai3() {
         Scanner scanner = new Scanner(System.in);
-        MyLog log = new MyLog("21522757.txt");
+        MyLog log = new MyLog("Lab01\\21522757.txt");
         System.out.print("Nhap n: ");
         int n = scanner.nextInt();
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();

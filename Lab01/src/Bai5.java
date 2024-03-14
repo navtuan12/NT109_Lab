@@ -2,8 +2,8 @@ import com.example.MyLog;
 import java.util.Scanner;
 
 public class Bai5 {
-    public static void main(String[] args) {
-        MyLog log = new MyLog("21522757.txt");
+    public Bai5(){
+        MyLog log = new MyLog("Lab01\\21522757.txt");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhap n:");
         int n = scanner.nextInt();
