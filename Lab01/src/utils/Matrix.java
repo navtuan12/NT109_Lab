@@ -28,18 +28,14 @@ d) Tìm cột trong ma trận có nhiều số nguyên tố nhất.
         scanner.close();
     }
 
-    public void Output(){
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < column; j++) {
-                System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
+    public int[][] getMatrix() {
+        return matrix;
     }
 
-    //a) Tìm phần tử lớn thứ nhất với chỉ số của nó (chỉ số đầu tiên tìm được).
-    public void FindMax(){
+    
+    public String FindMax(){
         int max = matrix[0][0];
+        StringBuilder sb = new StringBuilder();
         int x = 0, y = 0;
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
@@ -50,26 +46,29 @@ d) Tìm cột trong ma trận có nhiều số nguyên tố nhất.
                 }
             }
         }
-        System.out.println("Max: " + max + " at [" + x + "][" + y + "]");
+        sb.append("Max: " + max + " at [" + x + "][" + y + "]");
+        return sb.toString();
     }
 
     // b) Tìm và in ra các phần tử là số nguyên tố của ma trận (các phần tử không nguyên tố thì thay bằng số 0).
-    public void FindPrime(){
+    public String FindPrime(){
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
                 if((new util()).isPrime(matrix[i][j])){
-                    System.out.print(matrix[i][j] + " ");
+                    sb.append(matrix[i][j] + " ");
                 } else {
-                    System.out.print("0 ");
+                    sb.append("0 ");
                 }
             }
-            System.out.println();
+            sb.append("\n");
         }
+        return sb.toString();
     }
 
     //c) Sắp xếp tất cả các cột của ma trận theo thứ tự tăng dần và in kết quả ra màn hình.
 
-    public void SortColumns(){
+    public int[][] SortColumns(){
         for (int i = 0; i < column; i++) {
             int[] temp = new int[row];
             for (int j = 0; j < row; j++) {
@@ -88,7 +87,7 @@ d) Tìm cột trong ma trận có nhiều số nguyên tố nhất.
                 matrix[j][i] = temp[j];
             }
         }
-        Output();
+        return matrix;
     }
 
     public void FindColumnWithMostPrime(){

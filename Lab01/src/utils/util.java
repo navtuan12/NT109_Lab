@@ -12,4 +12,17 @@ public class util {
         }
         return true;
     }
+
+    public String toString(int[][] a) {
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < a.length ; i++)
+            for (int j = 0; j < a[i].length; j++) {
+                str.append(a[i][j]);
+                str.append("\t");
+                if(j == a[i].length-1)
+                    str.append("\n");
+            }
+        return str.toString();
+
+    }
 }

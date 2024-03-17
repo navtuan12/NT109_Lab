@@ -1,11 +1,9 @@
 import com.example.MyLog;
-
 import utils.Array;
 
-import java.util.Scanner;
 public class Bai13 {
 
-    public static void main(String[] args){
+    public Bai13() {
         Array a = new Array();
         MyLog log = new MyLog("Lab01\\21522757.txt");
         a.Input();

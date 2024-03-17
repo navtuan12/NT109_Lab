@@ -23,5 +23,6 @@ public class Bai4 {
         }
         log.WriteLog("Bai4: " + result);
         log.ReadFile();
+        scanner.close();
     }
 }

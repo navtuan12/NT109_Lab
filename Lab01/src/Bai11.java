@@ -1,20 +1,27 @@
 import com.example.MyLog;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.TreeMap;
 
 public class Bai11 {
-    public static final char SPACE = ' ';
-    public static final char TAB = '\t';
-    public static final char BREAK_LINE = '\n';
-    public static final char COMMA = ',';
+    private static final char SPACE = ' ';
+    private static final char TAB = '\t';
+    private static final char BREAK_LINE = '\n';
+    private static final char COMMA = ',';
      
-    public static void main(String[] args) {
+    public Bai11() {
+
         MyLog log = new MyLog("Lab01\\21522757.txt");
-        String input = "Hello World, Hello Java, Hello World";
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhap chuoi: ");
+        String input = scanner.nextLine();
         String result = countWords(input).toString().replace("=", ": ");
         log.WriteLog("Bai11: Input: "+ input +", result: " + result);
         log.ReadFile();
+        scanner.close();
+
     }
+
     public static Map<String, Integer> countWords(String input) {
         // khởi tạo wordMap
         Map<String, Integer> wordMap = new TreeMap<String, Integer>();
@@ -38,7 +45,7 @@ public class Bai11 {
         addWord(wordMap, sb);
         return wordMap;
     }
-
+    
     public static void addWord(Map<String, Integer> wordMap, StringBuilder sb) {
         String word = sb.toString();
         if (word.length() == 0) {
