@@ -89,8 +89,9 @@ d) Tìm cột trong ma trận có nhiều số nguyên tố nhất.
         }
         return matrix;
     }
-
-    public void FindColumnWithMostPrime(){
+    // /d) Tìm cột trong ma trận có nhiều số nguyên tố nhất.
+    public String FindColumnWithMostPrime(){
+        StringBuilder sb = new StringBuilder();
         int[] count = new int[column];
         for (int i = 0; i < column; i++) {
             for (int j = 0; j < row; j++) {
@@ -107,6 +108,10 @@ d) Tìm cột trong ma trận có nhiều số nguyên tố nhất.
                 index = i;
             }
         }
-        System.out.println("Column with most prime: " + index);
+        for(int i = 0; i < row; i++ ){
+            sb.append(matrix[i][index]);
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }

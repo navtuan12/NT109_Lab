@@ -47,3 +47,57 @@ Sun Mar 17 09:43:15 ICT 2024: Bai 14 b)
 0 0 11 0 
 13 0 0 0 
 
+Mon Mar 18 22:10:50 ICT 2024: Bai 14 Input:
+1	2	3	4	
+5	6	7	8	
+9	10	11	12	
+13	14	15	16	
+
+Mon Mar 18 22:10:50 ICT 2024: Bai 14 a) Max: 16 at [3][3]
+Mon Mar 18 22:10:50 ICT 2024: Bai 14 b) 
+0 2 3 0 
+5 0 7 0 
+0 0 11 0 
+13 0 0 0 
+
+Mon Mar 18 22:10:50 ICT 2024: Bai 14 c) 
+371115
+Mon Mar 18 22:11:47 ICT 2024: Bai 14 Input:
+1	2	3	4	
+5	6	7	8	
+9	10	11	12	
+13	14	15	16	
+
+Mon Mar 18 22:11:47 ICT 2024: Bai 14 a) Max: 16 at [3][3]
+Mon Mar 18 22:11:47 ICT 2024: Bai 14 b) 
+0 2 3 0 
+5 0 7 0 
+0 0 11 0 
+13 0 0 0 
+
+Mon Mar 18 22:11:47 ICT 2024: Bai 14 c) 
+13172125
+Mon Mar 18 22:12:20 ICT 2024: Bai 14 Input:
+1	2	3	4	
+5	6	7	8	
+9	10	11	12	
+13	14	15	16	
+
+Mon Mar 18 22:12:20 ICT 2024: Bai 14 a) Max: 16 at [3][3]
+Mon Mar 18 22:12:20 ICT 2024: Bai 14 b) 
+0 2 3 0 
+5 0 7 0 
+0 0 11 0 
+13 0 0 0 
+
+Mon Mar 18 22:12:20 ICT 2024: Bai 14 c) 
+3
+7
+11
+15
+
+
+Mon Mar 18 22:39:45 ICT 2024: Bai 15 Input: 002L2356, 003L5582, 003L0000, 005L0011, 004L5589, 
+Mon Mar 18 22:39:45 ICT 2024: Bai 15 Output: Dung roi!
+Mon Mar 18 22:40:15 ICT 2024: Bai 15 Input: 006L7891, 006L2222, 001A583, 00112258, 00000000, 
+Mon Mar 18 22:40:15 ICT 2024: Bai 15 Output: Sai roi!
