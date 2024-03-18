@@ -12,6 +12,7 @@ public class Bai6 {
         int bscnn = (a * b) / uscln;
         log.WriteLog("Bai6: Input: a=" + a + ", b=" + b + ", USCLN=" + uscln + ", BSCNN=" + bscnn);
         log.ReadFile();
+        scanner.close();
     }
 
     public static int USCLN(int a, int b) {
