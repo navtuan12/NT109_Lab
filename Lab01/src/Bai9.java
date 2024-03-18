@@ -1,7 +1,6 @@
 import com.example.MyLog;
 import java.util.Scanner;
 public class Bai9 {
-    //Viết chương trình phân tích số nguyên n thành các thừa số nguyên tố trong java. Ví dụ: 100 = 2x2x5x5.
     public Bai9() {
         MyLog log = new MyLog("Lab01\\21522757.txt");
         Scanner scanner = new Scanner(System.in);

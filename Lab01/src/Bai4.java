@@ -14,7 +14,7 @@ public class Bai4 {
             int soDu = tmp_n % b;
             char chuSo;
             if (soDu >= 10) {
-                chuSo = (char) (soDu + 55);  // A = 10, B = 11, ...
+                chuSo = (char) (soDu + 55); 
             } else {
                 chuSo = (char) (soDu + '0');
             }
