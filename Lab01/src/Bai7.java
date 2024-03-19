@@ -2,7 +2,6 @@ import com.example.MyLog;
 import java.util.Scanner;
 import utils.util;
 public class Bai7 {
-    
     public Bai7() {
         MyLog log = new MyLog("Lab01\\21522757.txt");
         Scanner scanner = new Scanner(System.in);

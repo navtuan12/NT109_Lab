@@ -1,7 +1,6 @@
 import com.example.MyLog;
 import java.util.Scanner;
 public class Bai6 {
-    
     public Bai6() {
         MyLog log = new MyLog("Lab01\\21522757.txt");
         Scanner scanner = new Scanner(System.in);
