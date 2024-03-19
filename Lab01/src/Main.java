@@ -1,8 +1,8 @@
 
 public class Main {
     public static void main(String[] args){
-        // new Bai1();
-        // new Bai2();
+        //new Bai1();
+        new Bai2();
         // new Bai3();
         // new Bai4();
         // new Bai5();
@@ -15,6 +15,6 @@ public class Main {
         // new Bai12();
         // new Bai13();
         //new Bai14();
-        new Bai15();
+        //new Bai15();
     }
 }

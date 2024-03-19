@@ -5,12 +5,6 @@ public class Matrix {
     private int column, row;
     private int[][] matrix;
 
-    /*
-        a) Tìm phần tử lớn thứ nhất với chỉ số của nó (chỉ số đầu tiên tìm được).
-b) Tìm và in ra các phần tử là số nguyên tố của ma trận (các phần tử không nguyên tố thì thay bằng số 0).
-c) Sắp xếp tất cả các cột của ma trận theo thứ tự tăng dần và in kết quả ra màn hình.
-d) Tìm cột trong ma trận có nhiều số nguyên tố nhất.
-     */
     public Matrix(int row, int column) {
         this.row = row;
         this.column = column;
@@ -50,7 +44,6 @@ d) Tìm cột trong ma trận có nhiều số nguyên tố nhất.
         return sb.toString();
     }
 
-    // b) Tìm và in ra các phần tử là số nguyên tố của ma trận (các phần tử không nguyên tố thì thay bằng số 0).
     public String FindPrime(){
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < row; i++) {
@@ -66,7 +59,6 @@ d) Tìm cột trong ma trận có nhiều số nguyên tố nhất.
         return sb.toString();
     }
 
-    //c) Sắp xếp tất cả các cột của ma trận theo thứ tự tăng dần và in kết quả ra màn hình.
 
     public int[][] SortColumns(){
         for (int i = 0; i < column; i++) {
@@ -89,7 +81,7 @@ d) Tìm cột trong ma trận có nhiều số nguyên tố nhất.
         }
         return matrix;
     }
-    // /d) Tìm cột trong ma trận có nhiều số nguyên tố nhất.
+    
     public String FindColumnWithMostPrime(){
         StringBuilder sb = new StringBuilder();
         int[] count = new int[column];
