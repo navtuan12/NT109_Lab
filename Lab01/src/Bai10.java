@@ -7,7 +7,6 @@ public class Bai10 {
     private static final char SPACE = ' ';
     private static final char TAB = '\t';
     private static final char BREAK_LINE = '\n';
-    private static final char COMMA = ',';
 
     public Bai10() {
         MyLog log = new MyLog("Lab01\\21522757.txt");
@@ -19,7 +18,7 @@ public class Bai10 {
         boolean notCounted = true;
         for (int i = 0; i < size; i++) {
             if (input.charAt(i) != SPACE && input.charAt(i) != TAB 
-                    && input.charAt(i) != BREAK_LINE && input.charAt(i) != COMMA) {
+                    && input.charAt(i) != BREAK_LINE) {
                 if(notCounted) {
                     count++;
                     notCounted = false;
@@ -28,7 +27,7 @@ public class Bai10 {
                 notCounted = true;
             }
         }
-        log.WriteLog("Bai10: " + count);
+        log.WriteLog("Bai10: Input: "+ input + ", Count: " + count);
         log.ReadFile();
         scanner.close();
     }

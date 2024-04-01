@@ -3,7 +3,6 @@ import java.util.Scanner;
 import com.example.MyLog;
 
 public class Bai12 {
-    //Nhập 2 sâu ký tự s1 và s2. Kiểm tra xem sâu s1 có chứa s2 không?
     public Bai12() {
         MyLog log = new MyLog("Lab01\\21522757.txt");
         Scanner scanner = new Scanner(System.in);

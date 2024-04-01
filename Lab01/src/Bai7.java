@@ -8,9 +8,9 @@ public class Bai7 {
         System.out.print("Nhap n: ");
         int n = scanner.nextInt();
         String result = "";
-        for (int i = 2; i <= n/2; i++) {
+        for (int i = 2; i < n; i++) {
             if ((new util()).isPrime(i)) {
-                result += (i==n/2 ? Integer.toString(i) : (Integer.toString(i) + ", "));
+                result += Integer.toString(i) + " ";
             }
         }
         log.WriteLog("Bai7: Input="+ n +", result: " + result);

@@ -21,7 +21,7 @@ public class Bai4 {
             result = (new StringBuilder()).append(chuSo).append(result).toString();;
             tmp_n /= b;
         }
-        log.WriteLog("Bai4: " + result);
+        log.WriteLog("Bai4: He co so 10 : " + n + ", He co so b: "+ b + ", Output: " + result);
         log.ReadFile();
         scanner.close();
     }

@@ -16,7 +16,7 @@ public class Bai3 {
         }
         String str = map.toString().replace("=", ": ");
         scanner.close();
-        log.WriteLog("Bai3: " + str);
+        log.WriteLog("Bai3: Input = "+ n + ", Output = " + str);
         log.ReadFile();
 
     }    

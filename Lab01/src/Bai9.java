@@ -6,11 +6,12 @@ public class Bai9 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhap n: ");
         int n = scanner.nextInt();
+        int tmp_n = n;
         String result = "";
-        for (int i = 2; i <= n; i++) {
-            while (n % i == 0) {
-                result += (n==i ? Integer.toString(i) : (Integer.toString(i) + "x"));
-                n /= i;
+        for (int i = 2; i <= tmp_n; i++) {
+            while (tmp_n % i == 0) {
+                result += (tmp_n==i ? Integer.toString(i) : (Integer.toString(i) + "x"));
+                tmp_n /= i;
             }
         }
         log.WriteLog("Bai9: Input="+ n +", result: " + result);
