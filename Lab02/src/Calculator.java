@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import org.decimal4j.util.DoubleRounder;
 
 public class Calculator extends WindowAdapter implements ActionListener {
     Frame f;
@@ -18,7 +19,7 @@ public class Calculator extends WindowAdapter implements ActionListener {
     };
     Button[] buttons = new Button[28];
     double num1 = 0, num2;
-    boolean operatorCheck = false;
+    boolean isCalculated = false;
     ArrayList<Double> memoryList = new ArrayList<Double>();
     boolean memoryListIsEmpty = true;
     ArrayList<String> operatorQueue = new ArrayList<String>();
@@ -117,65 +118,60 @@ public class Calculator extends WindowAdapter implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String z, zt;
+        if(isCalculated) {
+            l1.setText("");
+            l2.setText("");
+            isCalculated = false;
+        }
         if (e.getSource() == buttons[Arrays.asList(btnName).indexOf("0")]) {
             zt = l1.getText();
             z = zt + "0";
             l1.setText(z);
-
         }
         if (e.getSource() == buttons[Arrays.asList(btnName).indexOf("1")]) {
             zt = l1.getText();
             z = zt + "1";
             l1.setText(z);
-
         }
         if (e.getSource() == buttons[Arrays.asList(btnName).indexOf("2")]) {
             zt = l1.getText();
             z = zt + "2";
             l1.setText(z);
-
         }
         if (e.getSource() == buttons[Arrays.asList(btnName).indexOf("3")]) {
             zt = l1.getText();
             z = zt + "3";
             l1.setText(z);
-
         }
         if (e.getSource() == buttons[Arrays.asList(btnName).indexOf("4")]) {
             zt = l1.getText();
             z = zt + "4";
             l1.setText(z);
-
         }
         if (e.getSource() == buttons[Arrays.asList(btnName).indexOf("5")]) {
             zt = l1.getText();
             z = zt + "5";
             l1.setText(z);
-
         }
         if (e.getSource() == buttons[Arrays.asList(btnName).indexOf("6")]) {
             zt = l1.getText();
             z = zt + "6";
             l1.setText(z);
-
         }
         if (e.getSource() == buttons[Arrays.asList(btnName).indexOf("7")]) {
             zt = l1.getText();
             z = zt + "7";
             l1.setText(z);
-
         }
         if (e.getSource() == buttons[Arrays.asList(btnName).indexOf("8")]) {
             zt = l1.getText();
             z = zt + "8";
             l1.setText(z);
-
         }
         if (e.getSource() == buttons[Arrays.asList(btnName).indexOf("9")]) {
             zt = l1.getText();
             z = zt + "9";
             l1.setText(z);
-
         }
         if (e.getSource() == buttons[Arrays.asList(btnName).indexOf(".")]) {
             zt = l1.getText();
@@ -309,6 +305,91 @@ public class Calculator extends WindowAdapter implements ActionListener {
                 l2.setText(num1 + operatorQueue.get(1) + num2 +  "=");
                 l1.setText(ans.toString());
                 operatorQueue.clear();
+                isCalculated = true;
+            }
+        }
+
+        if(e.getSource() == buttons[Arrays.asList(btnName).indexOf("<-")]) {
+            String newText = l1.getText().toString();
+            l1.setText(newText.substring(0, newText.length()-1));
+        }
+
+        if(e.getSource() == buttons[Arrays.asList(btnName).indexOf("CE")]){
+            if(isCalculated){
+                l1.setText("");
+                l2.setText("");
+                isCalculated = false;
+            } else {
+                l1.setText("");
+            }
+        }
+
+        if(e.getSource() == buttons[Arrays.asList(btnName).indexOf("C")]){
+            l1.setText("");
+            l2.setText("");
+            operatorQueue.clear();
+            memoryList.clear();
+        }
+
+        if(e.getSource() == buttons[Arrays.asList(btnName).indexOf("1/x")]){
+            Double num = Double.parseDouble(l1.getText());
+            Double ans = 1/num;
+            ans = DoubleRounder.round(ans,6);
+            l1.setText(ans.toString());
+        }
+
+        if(e.getSource() == buttons[Arrays.asList(btnName).indexOf("±")]){
+            if(l1.getText().equals("")){
+                l1.setText("");
+            } else {
+                Double num = Double.parseDouble(l1.getText());
+                num = num * -1;
+                l1.setText(num.toString());
+            }
+        }
+
+        if(e.getSource() == buttons[Arrays.asList(btnName).indexOf("√")]){
+            Double num = Double.parseDouble(l1.getText());
+            Double ans = Math.sqrt(num);
+            ans = DoubleRounder.round(ans,6);
+            l1.setText(ans.toString());
+        }
+
+        if(e.getSource() == buttons[Arrays.asList(btnName).indexOf("MC")]){
+            memoryList.clear();
+            memoryListIsEmpty = true;
+        }
+
+        if(e.getSource() == buttons[Arrays.asList(btnName).indexOf("MR")]){
+            if(memoryListIsEmpty){
+                l1.setText("");
+                l2.setText("");
+            } else {
+                l1.setText(memoryList.get(memoryList.size()-1).toString());
+                l2.setText("");
+            }
+        }
+
+        if (e.getSource() == buttons[Arrays.asList(btnName).indexOf("MS")]) {
+            memoryList.add(Double.parseDouble(l1.getText()));
+            memoryListIsEmpty = false;
+        }
+
+        if(e.getSource() == buttons[Arrays.asList(btnName).indexOf("M+")]){
+            if(memoryListIsEmpty){
+                memoryList.add(Double.parseDouble(l1.getText()));
+                memoryListIsEmpty = false;
+            } else {
+                memoryList.add(memoryList.get(memoryList.size()-1) + Double.parseDouble(l1.getText()));
+            }
+        }
+
+        if(e.getSource() == buttons[Arrays.asList(btnName).indexOf("M-")]){
+            if(memoryListIsEmpty){
+                memoryList.add(Double.parseDouble(l1.getText()));
+                memoryListIsEmpty = false;
+            } else {
+                memoryList.add(memoryList.get(memoryList.size()-1) - Double.parseDouble(l1.getText()));
             }
         }
     }
