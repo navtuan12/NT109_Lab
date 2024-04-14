@@ -48,7 +48,6 @@ public class Calculator extends WindowAdapter implements ActionListener {
         for (int i = 0; i < btnName.length; i++) {
             buttons[i] = new Button(btnName[i]);
             if (btnName[i].equals("0")) {
-
                 c.fill = GridBagConstraints.BOTH;
                 c.gridx = 0;
                 c.gridy = 5;
@@ -56,9 +55,7 @@ public class Calculator extends WindowAdapter implements ActionListener {
                 c.gridheight = 1;
                 c.weightx = 2;
                 c.weighty = 1;
-
             } else if (btnName[i].equals("=")) {
-
                 c.fill = GridBagConstraints.BOTH;
                 c.gridx = 4;
                 c.gridy = 4;
@@ -66,9 +63,7 @@ public class Calculator extends WindowAdapter implements ActionListener {
                 c.gridheight = 2;
                 c.weightx = 1;
                 c.weighty = 2;
-
             } else if (btnName[i].equals(".") || btnName[i].equals("+")) {
-
                 c.fill = GridBagConstraints.BOTH;
                 c.gridx = (i % 5) + 1;
                 c.gridy = i / 5;
@@ -76,9 +71,7 @@ public class Calculator extends WindowAdapter implements ActionListener {
                 c.gridheight = 1;
                 c.weightx = 1;
                 c.weighty = 1;
-
             } else {
-
                 c.fill = GridBagConstraints.BOTH;
                 c.gridx = i % 5;
                 c.gridy = i / 5;
@@ -86,7 +79,6 @@ public class Calculator extends WindowAdapter implements ActionListener {
                 c.gridheight = 1;
                 c.weightx = 1;
                 c.weighty = 1;
-
             }
 
             p2.add(buttons[i], c);
