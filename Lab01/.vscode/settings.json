@@ -1,8 +1,0 @@
-{
-    "java.project.sourcePaths": ["src"],
-    "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "d:\\Workspace\\NT109\\demo\\demo.jar"
-    ]
-}

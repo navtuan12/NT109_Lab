@@ -20,7 +20,7 @@ public class Client {
             client = new Socket(host.getHostName(), port);
             // write to socket using ObjectOutputStream
             oos = new ObjectOutputStream(client.getOutputStream());
-            System.out.println("Sending request to Socket Server");
+            System.out.println("Send request to Socket Server");
             if (i == 4)
                 oos.writeObject("exit");
             else
