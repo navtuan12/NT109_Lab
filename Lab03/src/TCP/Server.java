@@ -12,44 +12,44 @@ public class Server extends Thread {
 
     public Server(int port) throws IOException {
         server = new ServerSocket(port);
-        //server.setSoTimeout(10000);
     }
 
-    public void run(){
+    public void run() {
         while (true) {
-           try{
-            System.out.println("Waiting for the client request ...");
-            Socket socket = server.accept();
-            ObjectInputStream objI = new ObjectInputStream(socket.getInputStream());
-            String message = (String) objI.readObject();
-            System.out.println("ClientToServer: "+ message);
-            ObjectOutputStream objO = new ObjectOutputStream(socket.getOutputStream());
+            try {
+                System.out.println("Waiting for the client request ...");
+                Socket socket = server.accept();
+                ObjectInputStream objI = new ObjectInputStream(socket.getInputStream());
+                String message = (String) objI.readObject();
 
-            // write object to Socket
-            objO.writeObject("ServerToClient: "+ message);
-            
-            // close resources
-            objI.close();
-            objO.close();
-            socket.close();
+                System.out.println("ClientToServer: " + message);
+                ObjectOutputStream objO = new ObjectOutputStream(socket.getOutputStream());
 
-            // terminate the server if client sends exit request
-            if (message.equalsIgnoreCase("exit")){
-                System.out.println("Shutting down Socket server!!");
-                server.close();
-                break;
+                // write object to Socket
+                objO.writeObject("ServerToClient: " + message);
+
+                // close resources
+                objI.close();
+                objO.close();
+
+                // terminate the server if client sends exit request
+                if (message.equalsIgnoreCase("exit")) {
+                    System.out.println("Shutting down Socket server!!");
+                    server.close();
+                    break;
+                }
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
-           } catch (IOException e) {
-               e.printStackTrace();
-           } catch (ClassNotFoundException e) {
-               e.printStackTrace();
-           }
         }
     }
 
     public static void main(String args[]) throws IOException {
         int port = 1234;
-        try{
+        try {
             Thread t = new Server(port);
             t.run();
         } catch (Exception e) {
