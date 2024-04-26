@@ -1,0 +1,36 @@
+Fri Apr 26 12:58:43 ICT 2024: 
+Input: 1000000
+Sequentially: 0.0857751
+Paralel: 0.0078426
+Fri Apr 26 12:59:22 ICT 2024: 
+Input: 1000000
+Sequentially: 0.0891732
+Paralel: 0.0072632
+Fri Apr 26 13:00:13 ICT 2024: 
+Input: 1000000
+Sequentially: 0.0893315
+Paralel: 0.0080038
+Fri Apr 26 14:18:33 ICT 2024: 
+Input: 1000000
+Sequentially: 0.0854736
+Paralel: 0.0085312
+Fri Apr 26 14:34:45 ICT 2024: 
+Input: 1000000
+Sequentially: 0.0400624
+Paralel: 0.0072165
+Fri Apr 26 14:34:59 ICT 2024: 
+Input: 1000000
+Sequentially: 0.0211227
+Paralel: 0.0072792
+Fri Apr 26 14:35:08 ICT 2024: 
+Input: 100000
+Sequentially: 0.0110322
+Paralel: 0.0020938
+Fri Apr 26 14:36:19 ICT 2024: 
+Input: 100000
+Sequentially: 0.0104501
+Paralel: 0.006562
+Fri Apr 26 14:36:28 ICT 2024: 
+Input: 1000000
+Sequentially: 0.0828699
+Paralel: 0.0075808

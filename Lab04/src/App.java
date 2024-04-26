@@ -1,25 +1,22 @@
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+import com.example.MyLog;
 
 class App implements Runnable {
-    private ExecutorService pool = Executors.newFixedThreadPool(10 );
+    private ExecutorService pool = Executors.newFixedThreadPool(4);
 
     public void quickSortThread(int arr[], int begin, int end) {
         if (begin < end) {
             int partitionIndex = partition(arr, begin, end);
-
-            Runnable left = () -> {
-                quickSort(arr, begin, partitionIndex - 1);
-            };
+            quickSortThread(arr, begin, partitionIndex - 1);
             Runnable right = () -> {
-                quickSort(arr, partitionIndex + 1, end);
+                quickSortThread(arr, partitionIndex + 1, end);
             };
-            pool.execute(left);
             pool.execute(right);
         }
     }
@@ -27,11 +24,8 @@ class App implements Runnable {
     public void quickSort(int arr[], int begin, int end) {
         if (begin < end) {
             int partitionIndex = partition(arr, begin, end);
-
             quickSort(arr, begin, partitionIndex - 1);
-
             quickSort(arr, partitionIndex + 1, end);
-
         }
     }
 
@@ -56,7 +50,7 @@ class App implements Runnable {
         return i + 1;
     }
 
-    public void print(int args[]) {
+    public static void print(int args[]) {
         for (int i = 0; i < args.length; i++) {
             System.out.print(args[i] + " ");
         }
@@ -69,24 +63,38 @@ class App implements Runnable {
         throw new UnsupportedOperationException("Unimplemented method 'run'");
     }
 
-    public static void main(String[] args) {
+    public static int[] generatedRandomArray(int n) {
         List<Integer> list = new ArrayList<Integer>();
-        int index = 0;
-        for (int i = 0; i < 10000; i++) {
-            list.add(index++);
+        for (int i = 0; i < n; i++) {
+            list.add(i);
         }
         Collections.shuffle(list);
-        int[] uniqueArray = new int[10000];
-        for (int i = 0; i < list.size(); i++) {
+        int[] uniqueArray = new int[n];
+        for (int i = 0; i < n; i++) {
             uniqueArray[i] = list.get(i);
         }
+        return uniqueArray;
+    }
+
+    public static void main(String[] args) {
+        // Genarate 2 random arrays
+        int n = 1000000;
+        int[] uniqueArray = generatedRandomArray(n);
+        int[] uniqueArray2 = uniqueArray;
+        MyLog log = new MyLog("21522757.txt");
+
         App app = new App();
-        app.print(uniqueArray);
         double startTime = System.nanoTime();
-        app.quickSortThread(uniqueArray, 0, 9999);
+        app.quickSort(uniqueArray, 0, n - 1);
         double endTime = System.nanoTime();
+
+        double startTime2 = System.nanoTime();
+        app.quickSortThread(uniqueArray2, 0, n - 1);
+        double endTime2 = System.nanoTime();
+
         double duration = (endTime - startTime) / 1000000000;
-        app.print(uniqueArray);
-        System.out.println(duration);
+        double duration2 = (endTime2 - startTime2) / 1000000000;
+        log.WriteLog("\nInput: " + n + "\nSequentially: " + duration + "\nParalel: " + duration2);
+        log.ReadFile();
     }
 }
