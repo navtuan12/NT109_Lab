@@ -13,10 +13,14 @@ class App implements Runnable {
     public void quickSortThread(int arr[], int begin, int end) {
         if (begin < end) {
             int partitionIndex = partition(arr, begin, end);
-            quickSortThread(arr, begin, partitionIndex - 1);
+
+            Runnable left = () -> {
+                quickSortThread(arr, begin, partitionIndex - 1);
+            };
             Runnable right = () -> {
                 quickSortThread(arr, partitionIndex + 1, end);
             };
+            pool.execute(left);
             pool.execute(right);
         }
     }
@@ -78,7 +82,7 @@ class App implements Runnable {
 
     public static void main(String[] args) {
         // Genarate 2 random arrays
-        int n = 1000000;
+        int n = 10000000;
         int[] uniqueArray = generatedRandomArray(n);
         int[] uniqueArray2 = uniqueArray;
         MyLog log = new MyLog("21522757.txt");
@@ -94,7 +98,7 @@ class App implements Runnable {
 
         double duration = (endTime - startTime) / 1000000000;
         double duration2 = (endTime2 - startTime2) / 1000000000;
-        log.WriteLog("\nInput: " + n + "\nSequentially: " + duration + "\nParalel: " + duration2);
+        log.WriteLog("\nInput: " + n + "\nSequential: " + duration + "\nParallel: " + duration2);
         log.ReadFile();
     }
 }
