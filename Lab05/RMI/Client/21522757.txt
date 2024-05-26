@@ -1,0 +1,10 @@
+Mon May 27 02:55:54 ICT 2024: hi
+Mon May 27 02:55:55 ICT 2024: Server response: hi
+Mon May 27 02:55:59 ICT 2024: xin chao
+Mon May 27 02:55:59 ICT 2024: Server response: xin chao
+Mon May 27 02:56:00 ICT 2024: 123
+Mon May 27 02:56:00 ICT 2024: Server response: 123
+Mon May 27 02:56:03 ICT 2024: tam biet
+Mon May 27 02:56:03 ICT 2024: Server response: tam biet
+Mon May 27 02:56:49 ICT 2024: quit
+Mon May 27 02:56:49 ICT 2024: Server response: quit

@@ -1,0 +1,13 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "f:\\Workspace\\NT109_Lab\\demo\\demo.jar"
+        ],
+        "exclude": [
+            "lib/log.jar"
+        ]
+    }
+}
